@@ -1,0 +1,19 @@
+
+/*
+
+Using:
+
+index = (index + 1) & (BUFFER_SIZE - 1);
+
+instead of:
+
+index = (index + 1) % BUFFER_SIZE;
+
+Reason:
+Bitwise AND operation is faster than modulo operation on many MCUs
+because it avoids division instructions.
+
+This optimization works only when BUFFER_SIZE is a power of 2
+(8, 16, 32, 64, etc.).
+
+*/
